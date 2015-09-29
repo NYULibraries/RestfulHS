@@ -1,0 +1,32 @@
+#!/bin/bash
+#------------------------------------------------------------------------------
+# restful interface to handle server startup  script
+#
+# 2010-10-20 -- nathan stevens -- originated script
+#------------------------------------------------------------------------------
+case "$1" in
+
+'start')
+        cd /usr/local/restfulhs
+        # on dl-rstardev.nyu.edu the following works
+        #sudo -u stevens nohup java -jar RestfulHS.jar restfulhs.properties &
+
+        # on dlibprod then the following needs to be ran using sudo
+        #su pr -c 'nohup java -jar RestfulHS.jar restfulhs.properties > /usr/local/logs/dlib/restfulhs/restfulhs.log 2>&1' &
+        ;;
+
+'stop')
+        PID=`ps -ef | grep RestfulHS.jar | grep pr | awk '{print $2}'`
+        kill -9 $PID
+        ;;
+
+*)
+        echo "Usage: $0 { start | stop }"
+        exit 1
+        ;;
+esac
+
+
+#------------------------------------------------------------------------------
+# END OF SCRIPT
+#------------------------------------------------------------------------------
