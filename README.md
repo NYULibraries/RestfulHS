@@ -6,7 +6,7 @@ It's build using the Restlet 2.0 framework (http://www.restlet.org/) given it
 the ability to run as a standalone service without requiring an additional
 servlet container, or webserver.
 
-##INSTALLATION
+###INSTALLATION
 
 Unzip the resfulhs.zip file in the direction where you want to install it.
 Edit the restfulhs.properties to set the port, and authentication information
@@ -15,7 +15,7 @@ authentication then you will also need to have the authentication files in a
 location accessable to the program.
 
 
-##RUNNING
+###RUNNING
 
 On Unix, change to installation directory and execute the following command to
 run the program in the background.
